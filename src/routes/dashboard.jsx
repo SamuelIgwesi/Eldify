@@ -1,4 +1,4 @@
-import StatsCard from "../Components/Statscard";
+import StatsCard from "../Components/StatsCard";
 import PersonIcon from "@mui/icons-material/Person";
 import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
 import Diversity3Icon from "@mui/icons-material/Diversity3";

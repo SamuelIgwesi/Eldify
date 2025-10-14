@@ -41,8 +41,8 @@ function Header() {
             id="dropdownDefaultButton"
             type="button"
           >
-            <h2 className="text-gray-700">Samuel Igwesi</h2>
-            <p className="text-gray-500 text-sm">Admin</p>
+            <h2 className="text-gray-700 sm:text-sm">Samuel Igwesi</h2>
+            <p className="text-gray-500 text-xs md:text-sm">Admin</p>
             <ArrowDropDownIcon
               fontSize="medium"
               className="text-gray-500 absolute left-30 top-5"

@@ -27,7 +27,7 @@ const data = [
 
 const UserArtistChart = () => {
   return (
-    <div className="w-[90%] h-[400px] bg-white shadow-lg rounded-xl p-4 ml-[3rem] mt-8">
+    <div className="ml-0 sm:h-[50%] md:w-[100%] h-[400px] bg-white shadow-lg rounded-xl p-4 mt-8">
       <h2 className="text-xl font-semibold mb-3 text-gray-700">
         User & Artist Growth (2025)
       </h2>
