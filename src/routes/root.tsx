@@ -7,6 +7,7 @@ import {
   CollectionsBookmark as CollectionsBookmarkIcon,
   Person as PersonIcon,
   Assessment as AssessmentIcon,
+  Settings as SettingsIcon,
 } from "@mui/icons-material";
 
 export default function Root() {
@@ -36,6 +37,11 @@ export default function Root() {
       to: "/reports",
       icon: <AssessmentIcon fontSize="inherit" />,
       label: "Reports",
+    },
+    {
+      to: "/settings",
+      icon: <SettingsIcon fontSize="inherit" />,
+      label: "Settings",
     },
   ];
 

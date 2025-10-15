@@ -31,9 +31,9 @@ const data = [
 const Reports = () => {
   return (
     <div className="p-6">
-      {/* <h1 className="text-2xl font-semibold mb-4 mt-4 text-[#0A7692]">
+      <h1 className=" mt-8 text-2xl sm:text-3xl font-semibold text-[#0A7692]">
         Reports
-      </h1> */}
+      </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
         <StatsCard title="Total Songs" value="8,900" Icon={LibraryMusicIcon} />
