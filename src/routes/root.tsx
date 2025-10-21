@@ -7,6 +7,7 @@ import {
   CollectionsBookmark as CollectionsBookmarkIcon,
   Person as PersonIcon,
   Assessment as AssessmentIcon,
+  Settings as SettingsIcon,
 } from "@mui/icons-material";
 
 export default function Root() {
@@ -37,14 +38,19 @@ export default function Root() {
       icon: <AssessmentIcon fontSize="inherit" />,
       label: "Reports",
     },
+    {
+      to: "/settings",
+      icon: <SettingsIcon fontSize="inherit" />,
+      label: "Settings",
+    },
   ];
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-800">
       <Header />
       {/* Sidebar Navigation */}
 
-      <nav className="hidden md:flex bg-[#031f46] text-white w-56 flex-col items-center pt-24 fixed h-screen">
+      <nav className="hidden md:flex bg-[var(--color-nav-bg)] text-[var(--color-nav-text)] w-56 flex-col items-center pt-24 fixed h-screen">
         <ul className="flex flex-col w-full space-y-3">
           {navItems.map(({ to, icon, label }) => (
             <li key={to}>
@@ -52,8 +58,8 @@ export default function Root() {
                 to={to}
                 className={({ isActive }) =>
                   isActive
-                    ? "flex items-center space-x-2 bg-[#0A7692] rounded-md px-4 py-2 w-full text-white font-semibold"
-                    : "flex items-center space-x-2 px-4 py-2 w-full text-gray-300 hover:bg-[#0A7692] hover:text-white rounded-md transition-all"
+                    ? "flex items-center space-x-2 bg-[var(--brand-color)] rounded-md px-4 py-2 w-full text-white font-semibold"
+                    : "flex items-center space-x-2 px-4 py-2 w-full text-gray-300 hover:bg-[var(--brand-color)] hover:text-white rounded-md transition-all"
                 }
               >
                 {icon}
@@ -66,7 +72,7 @@ export default function Root() {
 
       {/* Mobile Navigation */}
 
-      <nav className="md:hidden bg-[#031f46] text-white w-full fixed bottom-0 left-0 flex justify-around py-3 z-10 ">
+      <nav className="md:hidden bg-[var(--color-nav-bg)] text-[var(--color-nav-text)] w-full fixed bottom-0 left-0 flex justify-around py-3 z-10 ">
         {navItems.map(({ to, icon, label }) => (
           <NavLink
             key={to}

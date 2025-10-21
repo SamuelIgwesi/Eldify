@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-nav-bg: #031f46;
+  --color-nav-text: #edf2f7;
+  --brand-color: #0a7692;
+  --body-dark-bg: #f9fafb;
+}

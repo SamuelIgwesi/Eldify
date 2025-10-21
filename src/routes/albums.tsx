@@ -47,7 +47,7 @@ const Albums = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-semibold mt-8 mb-4 text-[#0A7692]">
+      <h1 className=" mt-8 mb-4 text-2xl sm:text-3xl font-semibold text-[#0A7692]">
         Albums
       </h1>
 

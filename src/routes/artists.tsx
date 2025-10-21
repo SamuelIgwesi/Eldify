@@ -48,7 +48,9 @@ const Artists = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-semibold mb-4 text-[#0A7692]">Artists</h1>
+      <h1 className=" mt-8 mb-4 text-2xl sm:text-3xl font-semibold text-[#0A7692]">
+        Artists
+      </h1>
 
       {/* Search bar */}
       <div className="mb-6">
