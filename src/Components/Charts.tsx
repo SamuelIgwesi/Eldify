@@ -45,8 +45,8 @@ const UserArtistChart = () => {
           <Area
             type="monotone"
             dataKey="users"
-            stroke="#0A7692"
-            fill="#0A7692"
+            stroke="var(--brand-color)"
+            fill="var(--brand-color)"
             fillOpacity={0.3}
           />
           <Area

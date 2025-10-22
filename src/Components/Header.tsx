@@ -14,7 +14,7 @@ function Header() {
       {/* Right Section */}
       <div className="flex mr-8 space-x-4 items-center relative">
         {/* Search */}
-        <div className="relative flex items-center">
+        <div className="relative flex items-center justify-center w-32 md:w-48">
           <SearchIcon
             className="absolute left-2 text-gray-500"
             fontSize="small"

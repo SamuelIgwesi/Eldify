@@ -21,15 +21,15 @@ const Users = () => {
   );
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-semibold mt-8 mb-4 text-[#0A7692]">Users</h1>
+    <div className="p-4 sm:p-5">
+      <h1 className="text-xl font-semibold mt-4 mb-3 text-[#0A7692]">Users</h1>
 
       {/* Search bar */}
-      <div className="mb-4">
+      <div className="mb-3">
         <input
           type="text"
           placeholder="Search users..."
-          className="border border-gray-300 rounded-md p-2 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-[#0A7692]"
+          className="border border-gray-300 rounded-md p-1.5 text-sm w-full sm:w-1/2 md:w-1/3 focus:outline-none focus:ring-2 focus:ring-[#0A7692]"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -37,14 +37,14 @@ const Users = () => {
 
       {/* Users Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-200 rounded-lg overflow-hidden">
-          <thead className="bg-[#0A7692] text-white">
+        <table className="min-w-full border border-gray-200 rounded-lg overflow-hidden text-sm">
+          <thead className="bg-[#0A7692] text-white text-xs sm:text-sm">
             <tr>
-              <th className="py-3 px-4 text-left">ID</th>
-              <th className="py-3 px-4 text-left">Name</th>
-              <th className="py-3 px-4 text-left">Email</th>
-              <th className="py-3 px-4 text-left">Role</th>
-              <th className="py-3 px-4 text-left">Action</th>
+              <th className="py-2 px-2 sm:px-3 text-left">ID</th>
+              <th className="py-2 px-2 sm:px-3 text-left">Name</th>
+              <th className="py-2 px-2 sm:px-3 text-left">Email</th>
+              <th className="py-2 px-2 sm:px-3 text-left">Role</th>
+              <th className="py-2 px-2 sm:px-3 text-left">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -54,12 +54,12 @@ const Users = () => {
                   key={user.id}
                   className="hover:bg-gray-100 transition-colors duration-200 border-b"
                 >
-                  <td className="py-3 px-4">{user.id}</td>
-                  <td className="py-3 px-4">{user.name}</td>
-                  <td className="py-3 px-4">{user.email}</td>
-                  <td className="py-3 px-4">{user.role}</td>
-                  <td className="py-3 px-4">
-                    <button className="text-[#0A7692] hover:underline font-medium">
+                  <td className="py-2 px-2 sm:px-3">{user.id}</td>
+                  <td className="py-2 px-2 sm:px-3">{user.name}</td>
+                  <td className="py-2 px-2 sm:px-3">{user.email}</td>
+                  <td className="py-2 px-2 sm:px-3">{user.role}</td>
+                  <td className="py-2 px-2 sm:px-3">
+                    <button className="text-[#0A7692] hover:underline font-medium text-sm">
                       View
                     </button>
                   </td>
@@ -67,7 +67,10 @@ const Users = () => {
               ))
             ) : (
               <tr>
-                <td colSpan={5} className="py-4 text-center text-gray-500">
+                <td
+                  colSpan={5}
+                  className="py-3 text-center text-gray-500 text-sm"
+                >
                   No users found.
                 </td>
               </tr>
