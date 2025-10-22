@@ -46,7 +46,7 @@ export default function Root() {
   ];
 
   return (
-    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-800">
+    <div className="flex min-h-screen bg-gray-100 dark:bg-[var(--body-dark-bg)]">
       <Header />
       {/* Sidebar Navigation */}
 

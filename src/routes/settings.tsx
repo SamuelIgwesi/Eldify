@@ -25,7 +25,7 @@ export default function Settings() {
 
   return (
     <div className="p-6 sm:p-10 min-h-screen dark:text-white">
-      <h1 className=" mt-2 mb-4 text-2xl sm:text-3xl font-semibold text-[#0A7692]">
+      <h1 className=" mt-2 mb-4 text-2xl sm:text-3xl font-semibold text-[var(--brand-color)] dark:text-[var(--text-heading)]">
         Settings
       </h1>
 

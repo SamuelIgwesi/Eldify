@@ -10,11 +10,13 @@ export default function Songs() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Songs</h1>
+      <h1 className="text-xl font-semibold mt-16 mb-3 text-[var(--brand-color)] dark:text-[var(--text-heading)]">
+        Songs
+      </h1>
 
       <div className=" p-6 rounded-lg shadow-lg">
-        <table className="min-w-full rounded-lg text-left border-b-gray-200 text-white">
-          <thead className="bg-[#0A7692] p-4">
+        <table className="min-w-full rounded-lg text-left dark:bg-[var(--table-body-bg)] border-b-gray-200 text-white">
+          <thead className="bg-[var(--brand-color)] dark:text-[var(--dark-text)] text-xs sm:text-sm dark:bg-[var(--table-header-bg)] px-4 py-32">
             <tr className="border-b border-gray-400">
               <th className="pb-2">S/N</th>
               <th className="pb-2">Title</th>
@@ -26,7 +28,7 @@ export default function Songs() {
             {songs.map((song, index) => (
               <tr
                 key={song.id}
-                className="border-b border-gray-700 hover:bg-gray-300 transition"
+                className="border-b dark:text-[var(--dark-text)]  dark:hover:bg-[var(--table-hover)] border-gray-700 hover:bg-gray-300 transition"
               >
                 <td className="py-2">{index + 1}</td>
                 <td className="py-2">{song.title}</td>

@@ -48,7 +48,7 @@ const Artists = () => {
 
   return (
     <div className="p-6">
-      <h1 className=" mt-8 mb-4 text-2xl sm:text-3xl font-semibold text-[#0A7692]">
+      <h1 className=" mt-8 mb-4 text-2xl sm:text-3xl font-semibold text-[#0A7692] dark:text-[var(--text-heading)]">
         Artists
       </h1>
 
@@ -57,7 +57,7 @@ const Artists = () => {
         <input
           type="text"
           placeholder="Search artists..."
-          className="border border-gray-300 rounded-md p-2 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-[#0A7692]"
+          className="dark:text-[var(--dark-text)] border border-gray-300 rounded-md p-2 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-[#0A7692]"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
