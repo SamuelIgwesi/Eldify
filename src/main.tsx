@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Reports from "./routes/reports";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,43 +12,37 @@ import Users from "./routes/users";
 import Albums from "./routes/albums";
 import Artists from "./routes/artists";
 import Songs from "./routes/songs";
+import Reports from "./routes/reports";
 import Settings from "./routes/settings";
+import Login from "./routes/login";
+import ProtectedRoute from "./Components/ProtectedRoute";
 import "./index.css";
 
 const router = createBrowserRouter([
+  { path: "/login", element: <Login /> },
   {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
+    element: <ProtectedRoute />,
     children: [
       {
-        index: true,
-        element: <Navigate to="/dashboard" replace />,
+        path: "/",
+        element: <Root />,
+        errorElement: <ErrorPage />,
+        children: [
+          { index: true, element: <Navigate to="/dashboard" replace /> },
+          { path: "dashboard", element: <Dashboard /> },
+          { path: "songs", element: <Songs /> },
+          { path: "artists", element: <Artists /> },
+          { path: "albums", element: <Albums /> },
+          { path: "users", element: <Users /> },
+          { path: "reports", element: <Reports /> },
+          { path: "settings", element: <Settings /> },
+        ],
       },
-      {
-        path: "dashboard",
-        element: <Dashboard />,
-      },
-      { path: "songs", element: <Songs /> },
-      { path: "artists", element: <Artists /> },
-      {
-        path: "albums",
-        element: <Albums />,
-      },
-      {
-        path: "users",
-        element: <Users />,
-      },
-      {
-        path: "reports",
-        element: <Reports />,
-      },
-      { path: "settings", element: <Settings /> },
     ],
   },
 ]);
 
-const rootElement = document.getElementById("root") as HTMLElement;
+const rootElement = document.getElementById("root");
 if (rootElement) {
   createRoot(rootElement).render(
     <StrictMode>

@@ -2,11 +2,16 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-nav-bg: #031f46;
+  --sidebar-hover: #0c90b0;
+  --sidebar-active: #095f76;
   --color-nav-text: #edf2f7;
   --brand-color: #0a7692;
   --body-dark-bg: #0f172a;
 
+  --sidebar-bg-dark: #052f3a;
+  --sidebar-hover-dark: #08485a;
+  --sidebar-active-dark: #0a7692;
+  --sidebar-text-dark: #e2f4f8;
   --header-dark-bg: #0d1526; /* darker header in dark mode, change if desired */
 
   --header-shadow: rgba(0, 0, 0, 0.24);

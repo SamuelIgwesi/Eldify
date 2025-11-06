@@ -40,14 +40,32 @@ const Albums = () => {
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedAlbum, setSelectedAlbum] = useState<{
+    id: number;
+    title: string;
+    artist: string;
+    cover: string;
+  } | null>(null);
+  const handleViewDetails = (album: {
+    id: number;
+    title: string;
+    artist: string;
+    cover: string;
+  }) => {
+    setSelectedAlbum(album);
+  };
 
   const filteredAlbums = albums.filter((album) =>
     album.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const handleCloseModal = () => {
+    setSelectedAlbum(null);
+  };
+
   return (
-    <div className="p-6">
-      <h1 className=" mt-8 mb-4 text-2xl sm:text-3xl font-semibold text-[#0A7692] dark:text-[var(--text-heading)]">
+    <div className="p-6 relative">
+      <h1 className="mt-8 mb-4 text-2xl sm:text-3xl font-semibold text-[#0A7692] dark:text-[var(--text-heading)]">
         Albums
       </h1>
 
@@ -80,7 +98,10 @@ const Albums = () => {
                   {album.title}
                 </h3>
                 <p className="text-gray-600">{album.artist}</p>
-                <button className="mt-3 bg-[#0A7692] text-white px-4 py-2 rounded-md text-sm hover:bg-[#095f76] transition">
+                <button
+                  onClick={() => handleViewDetails(album)}
+                  className="mt-3 bg-[#0A7692] text-white px-4 py-2 rounded-md text-sm hover:bg-[#095f76] transition"
+                >
                   View Details
                 </button>
               </div>
@@ -90,6 +111,35 @@ const Albums = () => {
           <p className="text-gray-500">No albums found.</p>
         )}
       </div>
+
+      {/* Modal */}
+      {selectedAlbum && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 sm:w-96 text-center relative">
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-2 right-3 text-gray-500 hover:text-gray-700 text-lg"
+            >
+              ✕
+            </button>
+            <img
+              src={selectedAlbum.cover}
+              alt={selectedAlbum.title}
+              className="w-40 h-40 mx-auto rounded-md object-cover mb-4"
+            />
+            <h2 className="text-xl font-semibold text-[#0A7692]">
+              {selectedAlbum.title}
+            </h2>
+            <p className="text-gray-600 mb-4">{selectedAlbum.artist}</p>
+            <button
+              onClick={() => alert(`Playing "${selectedAlbum.title}" 🎵`)}
+              className="bg-[#0A7692] text-white px-5 py-2 rounded-md text-sm hover:bg-[#095f76] transition"
+            >
+              Play Album
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

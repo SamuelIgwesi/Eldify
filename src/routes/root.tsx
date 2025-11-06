@@ -50,7 +50,7 @@ export default function Root() {
       <Header />
       {/* Sidebar Navigation */}
 
-      <nav className="hidden md:flex bg-[var(--color-nav-bg)] text-[var(--color-nav-text)] w-56 flex-col items-center pt-24 fixed h-screen">
+      <nav className="hidden dark:bg-[var(--sidebar-bg-dark)] md:flex bg-[var(--brand-color)] w-56 flex-col items-center pt-24 fixed h-screen">
         <ul className="flex flex-col w-full space-y-3">
           {navItems.map(({ to, icon, label }) => (
             <li key={to}>
@@ -58,8 +58,8 @@ export default function Root() {
                 to={to}
                 className={({ isActive }) =>
                   isActive
-                    ? "flex items-center space-x-2 bg-[var(--brand-color)] rounded-md px-4 py-2 w-full text-white font-semibold"
-                    : "flex items-center space-x-2 px-4 py-2 w-full text-gray-300 hover:bg-[var(--brand-color)] hover:text-white rounded-md transition-all"
+                    ? "flex items-center space-x-2 bg-[var(--sidebar-active)] px-4 py-2 w-full text-white font-semibold"
+                    : "flex items-center space-x-2 px-4 py-2 w-full text-gray-300 hover:bg-[var(--sidebar-hover)] hover:text-white rounded-md transition-all"
                 }
               >
                 {icon}
@@ -72,14 +72,14 @@ export default function Root() {
 
       {/* Mobile Navigation */}
 
-      <nav className="md:hidden bg-[var(--color-nav-bg)] text-[var(--color-nav-text)] w-full fixed bottom-0 left-0 flex justify-around py-3 z-10 ">
+      <nav className="md:hidden bg-[var(--brand-color)] text-[var(--color-nav-text)] w-full fixed bottom-0 left-0 flex justify-around py-3 z-10 ">
         {navItems.map(({ to, icon, label }) => (
           <NavLink
             key={to}
             to={to}
             className={({ isActive }) =>
               isActive
-                ? "flex flex-col items-center text-[#0A7692]"
+                ? "flex flex-col items-center text-white"
                 : "flex flex-col items-center text-gray-300 hover:text-[#0A7692]"
             }
           >
