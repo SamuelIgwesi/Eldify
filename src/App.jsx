@@ -1,16 +1,12 @@
-import { useState } from "react";
-import "./App.css";
 import Header from "./Components/Header.jsx";
 import Sidebar from "./Components/Sidebar.jsx";
-import StatsCard from "./Components/Statscard.jsx";
+import StatsCard from "./Components/StatsCard.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Header />
-      <div className="container">
+      <div class="container">
         <Sidebar />
         <StatsCard title="Total Users" value="2456" />
         <StatsCard title="Total Songs" value="324" />
