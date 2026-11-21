@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Header from "./Components/Header.jsx";
 import Sidebar from "./Components/Sidebar.jsx";
-import StatsCard from "./Components/Statscard.jsx";
+import StatsCard from "./Components/StatsCard.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
